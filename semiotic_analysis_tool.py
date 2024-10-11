@@ -423,6 +423,14 @@ def ensure_output_directory(directory='output'):
     except Exception as e:
         logging.error(f"Error creating output directory: {e}")
 
+
+##
+# This is a really NOT ok practice to continue using in 2024
+# This "Main script logic" should actually go inside the conventional main function
+# and instead of using global vars everwhere, turning your variable scope into an incomprehensible yarnball,
+# we should be passing all variables explicitly, or create a class object that we assign those values to and can
+# more reliably track and debug.
+
 # Main script logic
 input_data = load_input_data()
 text_list = list(input_data.values())
